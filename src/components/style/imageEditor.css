@@ -1,0 +1,20 @@
+.sidebar-item{
+    display: flex;
+    height: fit-content;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+   padding: 10px 20px;
+    background-color: white;
+    border: none;
+    border-radius: 10px;
+    
+}
+
+.sidebar-item:hover{
+        background-color: lightgray;
+}
+
+.active{
+    background-color: lightgray;
+}
