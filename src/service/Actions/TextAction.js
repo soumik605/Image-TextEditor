@@ -1,9 +1,12 @@
 import {
   ADD_TEXT,
+  CHANGE_FONT_ALIGN,
   CHANGE_FONT_COLOR,
   CHANGE_FONT_DETAILS,
   CHANGE_FONT_FAMILY,
   CHANGE_FONT_SIZE,
+  CHANGE_FONT_TRANSFORM,
+  REMOVE_CURRENT_TEXT,
 } from "../Constaints";
 
 export const addText = (details) => async (dispatch, getState) => {
@@ -16,7 +19,9 @@ export const addText = (details) => async (dispatch, getState) => {
       fontWeight: "normal",
       fontFamily: "Arial",
       fontDecoration: "none",
-      fontColor:"black"
+      fontColor: "black",
+      fontAlign: "left",
+      fontTransform: "none"
     },
   });
 };
@@ -62,3 +67,32 @@ export const changeFontFamily =
       },
     });
   };
+
+export const changeFontAlign =
+  (index, details) => async (dispatch, getState) => {
+    dispatch({
+      type: CHANGE_FONT_ALIGN,
+      payload: {
+        index,
+        details,
+      },
+    });
+  };
+
+export const changeFontTransform =
+  (index, details) => async (dispatch, getState) => {
+    dispatch({
+      type: CHANGE_FONT_TRANSFORM,
+      payload: {
+        index,
+        details,
+      },
+    });
+  };
+
+export const removeCurrentText = (index) => async (dispatch, getState) => {
+  dispatch({
+    type: REMOVE_CURRENT_TEXT,
+    payload: index,
+  });
+};
