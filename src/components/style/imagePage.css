@@ -23,3 +23,10 @@
   background-repeat: no-repeat;
   background-position: center;
 }
+
+
+.input-label{
+  display: flex;
+  height: min-content;
+  margin: auto;
+}

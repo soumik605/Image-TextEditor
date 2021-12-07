@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { connect } from "react-redux";
 import { Rnd } from "react-rnd";
 import "../style/dragDiv.css";
@@ -37,7 +37,10 @@ const DragDiv = ({
       }}
     >
       <div
-        style={{ overflow: "hidden", paddingRight: "10px", width: "100%" }}
+        style={{
+          overflow: "hidden",
+          width: "100%",
+        }}
         onClick={() => changeCurrentText(item, index)}
       >
         <h3
@@ -50,6 +53,13 @@ const DragDiv = ({
             textAlign: item.fontAlign,
             textTransform: item.fontTransform,
             color: item.fontColor,
+            backgroundColor:
+              item.fontBgColor === "none" ? "transparent" : item.fontBgColor,
+            padding: `${item.padding}px`,
+            border:
+              item.borderColor === "none"
+                ? "none"
+                : `1px solid ${item.borderColor}`,
           }}
         >
           {item.text}

@@ -20,7 +20,6 @@ export const PopupBox = styled.div`
   height: 80vh;
   top: 10vh;
   background: #fff;
-  overflow-y: auto;
   overflow-x: hidden;
   box-sizing: border-box;
   display: flex;
@@ -28,9 +27,10 @@ export const PopupBox = styled.div`
   border-radius: 10px;
   padding: 10px;
   @media (max-width: 768px) {
-    height: 60vh;
+    height: 100vh;
     width: 100%;
-    top: 20vh;
+    overflow-x: hidden;
+    overflow-y: scroll;
   }
 `;
 
@@ -62,6 +62,7 @@ export const Main = styled.div`
   box-sizing: border-box;
 
   @media (max-width: 768px) {
+    display: flex;
     flex-direction: column;
   }
 `;
@@ -71,9 +72,13 @@ export const LeftDiv = styled.div`
   box-sizing: border-box;
   overflow: overlay;
   background-size: contain;
-  &>img{
+  & > img {
     background-repeat: no-repeat;
     margin: auto;
+  }
+
+  @media (max-width: 768px) {
+    width: 100%;
   }
 `;
 export const RightDiv = styled.div`
@@ -87,5 +92,14 @@ export const RightDiv = styled.div`
   & > button {
     border-radius: 15px;
     margin: 10px 0;
+  }
+
+  @media (max-width: 768px) {
+    width: 100%;
+    flex-direction: row;
+    flex-wrap: wrap;
+    & > button {
+    margin: 0 10px ;
+  }
   }
 `;

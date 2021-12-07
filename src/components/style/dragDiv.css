@@ -1,9 +1,11 @@
 .rnd {
     overflow: hidden;
+    width: min-content;
+    height: min-content;
   }
   
   .rnd:hover {
-    border: 1px solid red;
+    outline: 1px solid tomato;
   }
   
   
@@ -11,7 +13,6 @@
       background-color: transparent;
       border: none;
       visibility: hidden;
-  
       background-color: red;
       color: white;
       cursor: pointer;

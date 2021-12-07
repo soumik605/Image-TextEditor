@@ -43,12 +43,14 @@ function MainPage(props) {
         <div className="main-image" style={getImageStyle()}>
           <ImagePage setPhoto={setPhoto} photo={photo} />
         </div>
+
         <div className="slider">
           <SliderPage
             selectedOption={selectedOption}
             handleChange={handleSliderChange}
           />
         </div>
+
         <div className="edit-items">
           <button className="crop-btn" onClick={() => setOpenCropModel(true)}>
             <Crop />

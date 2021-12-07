@@ -1,11 +1,18 @@
 .text-tools{
-    width: fit-content;
+    width: 100%;
+    padding-top: 5px;
     margin: auto;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    overflow-x: inherit;
+    overflow-y: hidden;
  
 }
 
 .textField{
     padding: 0;
+    min-width: 200px;
 }
 
 .textField>div{

@@ -1,11 +1,14 @@
 import {
   ADD_TEXT,
+  CHANGE_BORDER_COLOR,
   CHANGE_FONT_ALIGN,
+  CHANGE_FONT_BG_COLOR,
   CHANGE_FONT_COLOR,
   CHANGE_FONT_DETAILS,
   CHANGE_FONT_FAMILY,
   CHANGE_FONT_SIZE,
   CHANGE_FONT_TRANSFORM,
+  CHANGE_PADDING,
   REMOVE_CURRENT_TEXT,
 } from "../Constaints";
 
@@ -91,15 +94,45 @@ export default function TextReducer(state = initialState, action) {
       });
       return new_state_fontTransform;
 
+    case CHANGE_FONT_BG_COLOR:
+      let new_option_fontBgColor = {
+        ...state[action.payload.index],
+        fontBgColor: action.payload.color,
+      };
+      let new_state_fontBgColor = state.map((option, index) => {
+        if (index !== action.payload.index) return option;
+        else return new_option_fontBgColor;
+      });
+      return new_state_fontBgColor;
+
+    case CHANGE_BORDER_COLOR:
+      let new_option_borderColor = {
+        ...state[action.payload.index],
+        borderColor: action.payload.color,
+      };
+      let new_state_borderColor = state.map((option, index) => {
+        if (index !== action.payload.index) return option;
+        else return new_option_borderColor;
+      });
+      return new_state_borderColor;
+
+    case CHANGE_PADDING:
+      let new_option_padding = {
+        ...state[action.payload.index],
+        padding: action.payload.padding,
+      };
+      let new_state_padding = state.map((option, index) => {
+        if (index !== action.payload.index) return option;
+        else return new_option_padding;
+      });
+      return new_state_padding;
+
     case REMOVE_CURRENT_TEXT:
-      console.log(action.payload);
       let new_state_textRemove = state.filter((option, index) => {
-        console.log(option);
-        console.log(index);
         if (index !== action.payload) return option;
+        else return null;
       });
 
-      console.log(new_state_textRemove);
       return new_state_textRemove;
 
     default:

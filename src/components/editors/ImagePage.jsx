@@ -13,7 +13,7 @@ const ImagePage = ({ setPhoto, photo, allText }) => {
   };
 
   return !photo ? (
-    <label htmlFor="icon-button-file" style={{ display: "flex" }}>
+    <label htmlFor="icon-button-file" className="input-label">
       <input
         accept="image/*"
         id="icon-button-file"
